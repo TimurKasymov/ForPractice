@@ -1,0 +1,89 @@
+
+
+<!-- <div>
+  <form [formGroup]="carWashPointForm" (ngSubmit)="onSubmit()">
+
+
+      <input type="text"  carWashPointForm="address">
+
+      <input type="text"  carWashPointForm="name">
+
+
+      <input type="text"  carWashPointForm="email" name="email">
+
+
+      <input type="text"  carWashPointForm="employeesName">
+
+
+      <input type="text"  carWashPointForm="employeesYearsOld">
+
+
+      <input type="text"  carWashPointForm="carWashPointType">
+  <button type="submit">Submit</button>
+  </form>
+</div> -->
+
+
+
+<form class="inp, frm" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+  <ion-card class="ion-float-endsticky">
+    <ion-item>
+      <ion-label position="floating" >Имя</ion-label>
+      <ion-input id="name" type="text" formControlName="name" #nam></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Адрес</ion-label>
+      <ion-input id="adress" type="text" formControlName="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Имя срециалиста</ion-label>
+      <ion-input id="employeesName" type="text" formControlName="employeesName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Возраст срециалиста</ion-label>
+      <ion-input id="employeesYearsOld" type="text" formControlName="employeesYearsOld"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Тип автомойки</ion-label>
+      <ion-input id="carWashPointType" type="text" formControlName="carWashPointType"></ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-button class="button"  type="submit">Создать {{nam.value}}</ion-button>
+</form>
+
+
+<ion-content>
+  <ion-card class="wrap">
+    <ion-card *ngFor="let item of items" class="wid" >
+      <ion-item>
+        <ion-icon name="pin"></ion-icon>
+        <ion-label>{{ item.name }}</ion-label>
+        <ion-button fill="outline" slot="end">Подробно </ion-button>
+      </ion-item>
+      <ion-card-content>
+        <p > Адрес:   {{ item.address }} </p>
+      </ion-card-content>
+      <ion-card-content>
+        <p > Почта:   {{ item.email }} </p>
+      </ion-card-content>
+      <ion-card-content>
+        <p > Тип:   {{ item.carWashPointType }} </p>
+      </ion-card-content>
+      <ion-card-content>
+        Персонал:
+        <ion-card-content>
+          <p > Имя:   {{ item.employeesName }} </p>
+        </ion-card-content>
+        <ion-card-content>
+          <p > Возраст:   {{ item.employeesYearsOld }} </p>
+        </ion-card-content>
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+</ion-content>
+
+
+
+
+

@@ -1,0 +1,18 @@
+.wid{
+  max-width: 80%;
+}
+.wrap{
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+}
+
+.frm{
+  width: 40%;
+  align-content: center;
+}
+.srd{
+  align-content: center;
+}
+ion-button{
+  left: 50%;
+}
